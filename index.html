@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jan's Online Consultancy</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Jan's Online Consultancy</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#why-us">Why Us?</a></li>
+            <li><a href="#consultants">Our Consultants</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="home-overlay">
+            <img src="images/HomeScreen.jpg" alt="Home Screen Image" class="home-image">
+            <!-- Semi-transparent overlay -->
+            <div class="overlay"></div>
+            <div class="home-text">
+                <h1>Welcome to Jan's Online Veterinary Consultancy</h1>
+                <p>Your pet's health is our top priority.</p>
+                <button class="book-button" id="open-modal">Book</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-modal">&times;</span>
+            <h2>Book a Consultation</h2>
+            <form id="booking-form" action="https://formspree.io/f/xzzpqvbj" method="POST">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="pet-type">Type of Pet:</label>
+                <select id="pet-type" name="pet-type" required>
+                    <option value="">Select</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="exotic">Exotic Pet</option>
+                    <option value="equine">Equine</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="appointment-date">Select Date:</label>
+                <input type="date" id="appointment-date" name="appointment-date" required>
+
+                <label for="time-slots">Select Time Slot:</label>
+                <div id="time-slots" class="time-slots">
+                    <!-- Time slots will be generated here -->
+                </div>
+
+                <!-- Hidden inputs to store selected date and time slot -->
+                <input type="hidden" id="selected-date" name="selected-date">
+                <input type="hidden" id="selected-time" name="selected-time">
+
+                <label for="message">Brief Description:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Why Us Section -->
+    <section id="why-us">
+        <h2>Why Us?</h2>
+        <p> •At Jan's Online Consultancy, we offer expert veterinary advice from the comfort of your home, for far cheaper than visting a brick and mortar vet! <br>
+            •With over 100 years of combined veterinray experience, we are confident we can help you with whatever you may need.<br>
+            •All of our consultants are PHD holders so you can rest assured our verdicts are well thought out and accurate.
+        </p>
+        <!-- Additional content can be added here -->
+    </section>
+
+    <!-- Our Consultants Section -->
+    <section id="consultants">
+        <h2>Our Consultants</h2>
+        <div class="consultant-cards">
+            <!-- Head Consultant -->
+            <div class="consultant-card">
+                <img src="images/Jan.jpg" alt="Dr. Jan van Dijk">
+                <h3>Dr. Jan van Dijk</h3>
+                <p>Head Consultant</p>
+                <p>PhD in Veterinary Parasitology</p>
+                <p>Best Dissertation of 2008</p>
+                <!-- LinkedIn Icon -->
+                <a href="https://www.linkedin.com/in/jan-van-dijk-a20245170/?originalSubdomain=uk" target="_blank" class="linkedin-icon" aria-label="LinkedIn profile of Dr. Jan van Dijk">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+            <!-- Consultant 1 -->
+            <div class="consultant-card">
+                <img src="images/SarahJohnston.jpg" alt="Dr. Sarah Johnston">
+                <h3>Dr. Sarah Johnston</h3>
+                <p>Specialist in Small Animals</p>
+            </div>
+            <!-- Consultant 2 -->
+            <div class="consultant-card">
+                <img src="images/MarkThompson.jpg" alt="Dr. Mark Thompson">
+                <h3>Dr. Mark Thompson</h3>
+                <p>Exotic Pet Expert</p>
+            </div>
+            <!-- Consultant 3 -->
+            <div class="consultant-card">
+                <img src="images/EmilyDavies.jpg" alt="Dr. Emily Davies">
+                <h3>Dr. Emily Davies</h3>
+                <p>Equine Specialist</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews">
+        <h2>Reviews</h2>
+        <div class="slider">
+            <div class="slides">
+                <!-- Slide 1 -->
+                <div class="slide">
+                    <p>"Excellent service and very helpful!"</p>
+                    <h4>- John Doe</h4>
+                </div>
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <p>"My dog is healthier than ever thanks to their advice."</p>
+                    <h4>- Jane Smith</h4>
+                </div>
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <p>"Professional and compassionate consultants."</p>
+                    <h4>- Mike Johnson</h4>
+                </div>
+                <!-- Slide 4 -->
+                <div class="slide">
+                    <p>"Highly recommend for any pet owner!"</p>
+                    <h4>- Emily Brown</h4>
+                </div>
+            </div>
+            <!-- Progress Bar -->
+            <div class="progress-bar-container">
+                <div class="progress-bar"></div>
+            </div>
+            <!-- Navigation buttons -->
+            <div class="slider-nav">
+                <button class="prev" aria-label="Previous testimonial">&#10094;</button>
+                <button class="next" aria-label="Next testimonial">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Jan's Online Consultancy</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
